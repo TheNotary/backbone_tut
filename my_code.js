@@ -11,11 +11,13 @@ var Donut = Backbone.Model.extend({
     cream_filled : false
   },
  
+  /* we need to comment this out since it's not a rails app, it's just a flat html
   url : function() {
     // Important! It's got to know where to send its REST calls.
     // In this case, POST to '/donuts' and PUT to '/donuts/:id'
     return this.id ? '/donuts/' + this.id : '/donuts';
   }
+  */
  
 });
 
@@ -27,7 +29,7 @@ var DonutView = Backbone.View.extend({
  
   render : function() {
     this.el.innerHTML = this.model.get('name');
- 
+
     return this;
   }
 });
@@ -46,7 +48,8 @@ var bostonCream = new Donut({ // attributes passed to the Donut constructor will
 bostonCream.set({ sprinkles : true });
 
 // Saving
-bostonCream.save(); // this will now POST to the RESTful interface.
+// bostonCream.save(); // this will now POST to the RESTful interface.
+
 
 
 
@@ -60,6 +63,16 @@ var bcDonutView = new DonutView({
 var renderedDonutElement = bcDonutView.render().el;
 
 
+
+$().ready(function(){
+// Here's where we actually 'render' the element on the DOM
+// really Backbone should have called their function 'build' but
+// render makes a little sense out of context.  
+
+$("#app").html(renderedDonutElement);
+
+
+});
 
 
 
