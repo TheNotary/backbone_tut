@@ -60,7 +60,7 @@ var bcDonutView = new DonutView({
   model : bostonCream
 });
  
-var renderedDonutElement = bcDonutView.render().el;
+bcDonutView.render();
 
 
 
@@ -69,7 +69,7 @@ $().ready(function(){
 // really Backbone should have called their function 'build' but
 // render makes a little sense out of context.  
 
-$("#app").html(renderedDonutElement);
+$("#app").html(bcDonutView.el);
 
 
 });
