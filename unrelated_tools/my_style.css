@@ -1,0 +1,14 @@
+.m {
+  color: #428bca;
+}
+
+.box script {
+  display: block;
+  white-space: pre;
+  background: #333;
+  color: white;
+  padding: 10px;
+  font: 11px Monaco, MonoSpace;
+  width: 460px;
+  overflow: auto;
+}

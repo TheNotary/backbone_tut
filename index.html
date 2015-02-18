@@ -1,4 +1,4 @@
-<!html>
+<!DOCTYPE html>
 <html>
 <head>
   <section id="dependencies">
@@ -20,6 +20,8 @@
 
   <!-- Note:  These lines are only here to make the tutorial look pretty and nice -->
   <link rel="stylesheet" href="/unrelated_tools/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/unrelated_tools/my_style.css">
+  <script src="/unrelated_tools/jquery-ui.js"></script>
   <script src="/unrelated_tools/bootstrap/js/bootstrap.min.js"></script>
   <script src="/unrelated_tools/my_ui.js"></script>
   <!-- Ignore above, they're not needed to use backbone.js -->
@@ -32,14 +34,19 @@
 
   <p>Here's my barebones backbonejs tut (because you can't learn backbone without making a file like this by hand)</p>
 
-  <p>Based on http://liquidmedia.ca/blog/2011/01/backbone-js-part-1/ </p>
+  <p>
+    Based on 
+    <a href="http://liquidmedia.ca/blog/2011/01/backbone-js-part-1/">http://liquidmedia.ca/blog/2011/01/backbone-js-part-1/</a> and
+    <a href="http://liquidmedia.org/blog/2011/02/backbone-js-part-3/">http://liquidmedia.org/blog/2011/02/backbone-js-part-3/</a>
+  </p>
 
   <h3>Notes</h4>
 
   <ul class="nav nav-tabs">
     <li role="presentation" class="active dependencies"><a href="#" onclick="MyUI.displayNotes(this)" data-name="dependencies">Dependencies</a></li>
     <li role="presentation" class="order-of-operations"><a href="#" onclick="MyUI.displayNotes(this)" data-name="order-of-operations">Order of Operations</a></li>
-    <li role="presentation" class="my-code-js-output"><a href="#" onclick="MyUI.displayNotes(this)" data-name="my-code-js-output">my_code.js output</a></li>
+    <li role="presentation" class="my-code-js-output"><a href="#" onclick="MyUI.displayNotes(this)" data-name="my-code-js-output">my_code.js output (models & views)</a></li>
+    <li role="presentation" class="my-code-js-output-collections"><a href="#" onclick="MyUI.displayNotes(this)" data-name="my-code-js-output-collections">my_code.js output (collections)</a></li>
   </ul>
   
   <div class="notes dependencies">
@@ -93,12 +100,7 @@
           <li>Model</li>
         </ul>
       </li>
-      
-      
     </ul>
-
-    
-
 
   </div>
   
@@ -110,15 +112,56 @@
     </p>
     
     <h6>variables of intereset</h6>
+    <div class='row span8'>
+      <div class='span4'>
+        <ul>
+          <li>Model Class: <span class='m model-class'>Donut</span></li>
+          <li>View Class:  <span class='m view-class'>DonutView</span></li>
+          <li>Instance of Model:  <span class=''>bostonCream</span></li>
+          <li>Instance of View:  bcDonutView</li>
+          <li>Page Element Being Rendered To:  $('#app')</li>
+        </ul>
+      </div>
+      <div class='span4'>
+        hi
+        <div id="box" class="box" data-trigger="model-class">
+
+         <script>alert('hi'); 
+
+         </script>
+
+        </div>
+        <div id="box1" class="box" data-trigger="model-view">    
+          Box two
+        </div> 
+
+      </div>
+    </div>
+
+
+    <div class="row span8">
+      <div id="app"></div>
+    </div>
+  </div>
+  
+  <div class="my-code-js-output-collections notes hide">
+    <p>
+      Collections get there own tab to keep it clean!
+    </p>
+    
+    <h6>Variables related to Collections</h6>
     <ul>
-      <li>Model Class:  Donut</li>
-      <li>View Class:  DonutView</li>
-      <li>Instance of Model:  bostonCream</li>
-      <li>Instance of View:  bcDonutView</li>
+      <li>Collection Class:  DonutCollection</li>
+      <li></li>
+      <li></li>
+      <li>Page Element Being Rendered To:  $('#app')</li>
     </ul>
     
-    <div id="app"></div>
+    <div id="app-c"></div>
+    
+    
   </div>
+  
   
 </div>
 
