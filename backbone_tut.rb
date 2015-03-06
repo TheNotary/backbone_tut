@@ -1,23 +1,30 @@
 require 'camping'
-
 Camping.goes :BackboneTut
 
-module BackboneTut::Models
-  class User < Base; end
-  class Post < Base; belongs_to :user end
+module BackboneTut
+  set :views, File.dirname(__FILE__) #+ '/views'
 end
+
+module BackboneTut::Models;  class Donut < Base; end; end
 
 module BackboneTut::Controllers
   class Index < R '/'
-    def get; render :index end
+    def get 
+      @t = Time.now
+      #render :index 
+      render 'views/index.html'
+    end
   end
 end
 
 module BackboneTut::Views
   def layout
-    html { body { self << yield } }
+    html do
+      head do
+        title { "Nuts And GORP" }
+      end
+      body { self << yield }
+    end
   end
-  def index
-    div.page "Welcome! <%= Time.now %>"
-  end
+
 end
