@@ -60,18 +60,16 @@ var bcDonutView = new DonutView({
   model : bostonCream
 });
  
-bcDonutView.render();
 
 
+
+/* Render model using view on page load */
 
 $().ready(function(){
-// Here's where we actually 'render' the element on the DOM
-// really Backbone should have called their function 'build' but
-// render makes a little sense out of context.  
-
-$("#app").html(bcDonutView.el);
-
-
+  // Here's where we actually 'render' the element on the DOM
+  // really Backbone should have called their function 'build' but
+  // render makes a little sense out of context.  
+  $("#app").html(bcDonutView.render().el);
 });
 
 

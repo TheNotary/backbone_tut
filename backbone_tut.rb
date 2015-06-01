@@ -15,6 +15,12 @@ module BackboneTut::Controllers
       render 'views/index.html'
     end
   end
+  
+  class Javascript < R '/js/model_view_code.js'
+    def get
+      render 'views/js/model_view_code.js'
+    end
+  end
 end
 
 module BackboneTut::Views
