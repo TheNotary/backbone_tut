@@ -4,3 +4,5 @@ gem 'camping-omnibus'
 
 gem 'markaby'
 gem 'tilt'
+
+gem 'pry'

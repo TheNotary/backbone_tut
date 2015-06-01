@@ -1,0 +1,48 @@
+<div class="my-code-js-output notes hide">
+  <p>
+    You can see the outputs from my_ui.js applied below (the div with the id of "#app" is visible in this tab).  
+    You can also play around in the firefox/ browser's console too.  
+  </p>
+  
+  <h6>variables of intereset</h6>
+  <div class='row span8'>
+    <div class='span4'>
+      <ul>
+        <li>Model Class: <span class='m model-class'>Donut</span></li>
+        <li>View Class:  <span class='m view-class'>DonutView</span></li>
+        <li>Instance of Model:  <span class=''>bostonCream</span></li>
+        <li>Instance of View:  bcDonutView</li>
+        <li>Page Element Being Rendered To:  $('#app')</li>
+      </ul>
+    </div>
+    <div class='span4'>
+
+      <div id="box" class="box" data-trigger="model-class">
+	      <script>
+	      	<%= render "js/model_view/_01_create_model_class.js" %>
+
+	      	<%= render "js/model_view/_02_create_view_class.js" %>
+
+	      	<%= render "js/model_view/_03_instantiate_model.js" %>
+
+	      	<%= render "js/model_view/_04_instantiate_view.js" %>
+
+	      	<%= render "js/model_view/_05_render_model_on_page_load.js" %>
+
+	      </script>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row span8">
+  	<div class="well">
+  		<p>Right below this line is where the #app element is!  It's being written to by backbone!</p>
+  		<p>To prove to yourself that you're learning, change the name of the donut, and re-render it to the page</p>
+  	</div>
+    <div id="app"></div>
+
+    <br><br><br><br>
+  </div>
+</div>

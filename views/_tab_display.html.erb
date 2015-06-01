@@ -1,0 +1,119 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active dependencies"><a href="javascript:void(0)" onclick="MyUI.displayNotes(this)" data-name="dependencies">Dependencies</a></li>
+  <li role="presentation" class="order-of-operations"><a href="javascript:void(0);" onclick="MyUI.displayNotes(this)" data-name="order-of-operations">Order of Operations</a></li>
+  <li role="presentation" class="my-code-js-output"><a href="javascript:void(0);" onclick="MyUI.displayNotes(this)" data-name="my-code-js-output">my_code.js output (models & views)</a></li>
+  <li role="presentation" class="my-code-js-output-collections"><a href="javascript:void(0);" onclick="MyUI.displayNotes(this)" data-name="my-code-js-output-collections">my_code.js output (collections)</a></li>
+</ul>
+
+<div class="notes dependencies">
+  <div id="dependencies_view" class="well">
+  <script>
+      $().ready(function() {
+      var myHtml = $("#dependencies").html();
+      myHtml = myHtml.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+      $("#dependencies_view").html(myHtml);
+      });
+  </script>
+  </div>
+</div>
+
+<div class="notes order-of-operations hide">
+  <p>
+    As you start out with backbonejs, you'll likely feel uncertain as to what classes to make first.  
+    Below is the most sensical way to do things.  
+  </p>
+  
+  <h4> Order of Operation </h4>
+  <ul>
+    <li>Model Class</li>
+    <li>View Class</li>
+    <br>
+    
+    <li>
+      Model Instantiation
+      <div><strong>Requires:</strong></div>
+      <ul>
+        <li>Model Class</li>
+      </ul>
+    </li>
+    <br>
+
+    <li>
+      View Instatiation
+      <div><strong>Requires:</strong></div>
+      <ul>
+          <li>Model Class</li>
+          <li>View Class</li>
+          <li>Model Instantiation</li>
+        </ul>
+    </li>
+    <br>
+    
+   <li>
+      Collection Class
+      <ul>
+        <li>Requires:</li>
+        <li>Model</li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="my-code-js-output notes hide">
+  <p>
+    You can see the outputs from my_ui.js applied below (the div with the id of "#app" is visible in this tab).  
+    You can also play around in the console too.  
+  </p>
+  
+  <h6>variables of intereset</h6>
+  <div class='row span8'>
+    <div class='span4'>
+      <ul>
+        <li>Model Class: <span class='m model-class'>Donut</span></li>
+        <li>View Class:  <span class='m view-class'>DonutView</span></li>
+        <li>Instance of Model:  <span class=''>bostonCream</span></li>
+        <li>Instance of View:  bcDonutView</li>
+        <li>Page Element Being Rendered To:  $('#app')</li>
+      </ul>
+    </div>
+    <div class='span4'>
+      hi
+      <div id="box" class="box" data-trigger="model-class">
+
+       <script>alert('hio'); 
+
+       </script>
+
+      </div>
+      <div id="box1" class="box" data-trigger="model-view">    
+        Box two
+      </div> 
+
+    </div>
+  </div>
+
+
+  <div class="row span8">
+    <div id="app"></div>
+  </div>
+</div>
+
+<div class="my-code-js-output-collections notes hide">
+  <p>
+    Collections get there own tab to keep it clean!
+  </p>
+  
+  <h6>Variables related to Collections</h6>
+  <ul>
+    <li>Collection Class:  DonutCollection</li>
+    <li></li>
+    <li></li>
+    <li>Page Element Being Rendered To:  $('#app')</li>
+  </ul>
+  
+  <div id="app-c"></div>
+  
+  
+</div>

@@ -14,7 +14,7 @@ Then connect to the camping app via a web browser.
 
 ## Where are the Html pages?
 
-Look in the views/ folder.  You'll see html.erb folder.  The main one to look at is index.html.erb.  
+Look in the views/ folder.  You'll see html.erb files everywhere.  The main one to look at is index.html.erb.  To make it clean, I used partials and 'called in' markup from other files.  If you don't know about partials, you might have a more enjoyable time viewing the source of the web page directly.  You should know how to use firefox developer tools or something similar before moving on to more advanced javascript programming tricks like backbone.js =/  
 
 
 

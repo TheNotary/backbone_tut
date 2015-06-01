@@ -1,0 +1,12 @@
+/* View Definition */
+
+var DonutView = Backbone.View.extend({
+  tagName : "div",
+  className : "donut",
+ 
+  render : function() {
+    this.el.innerHTML = this.model.get('name');
+
+    return this;
+  }
+});

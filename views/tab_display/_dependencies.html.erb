@@ -1,0 +1,14 @@
+<div class="notes dependencies">
+  
+  <p>To use backbone.js, you just need to add the below code to your html file.  </p>
+
+  <div id="dependencies_view" class="well">
+  <script>
+      $().ready(function() {
+      var myHtml = $("#dependencies").html();
+      myHtml = myHtml.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+      $("#dependencies_view").html(myHtml);
+      });
+  </script>
+  </div>
+</div>
