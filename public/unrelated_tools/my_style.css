@@ -2,14 +2,18 @@
   color: #428bca;
 }
 
-.box script {
+#source-view {
+  border: solid #333 1px;
+  height: 460px;
+  background: #eee;
+}
+
+.box script, #source-view script {
   display: block;
   white-space: pre;
-  background: #333;
-  color: white;
+  color: #333;
   padding: 10px;
   font: 11px Monaco, MonoSpace;
-  width: 460px;
   overflow: auto;
 }
 

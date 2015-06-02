@@ -1,42 +1,64 @@
+<script src="js/model_view/all.js"></script>
+
 <div class="my-code-js-output notes hide">
   <p>
-    You can see the outputs from my_ui.js applied below (the div with the id of "#app" is visible in this tab).  
+    There are scripts on this page which write to the element "#app" using backbone.js in an MVC style.  
+    click <a href="js/model_view/all.js">here</a> to see the script on a single page.  
     You can also play around in the firefox/ browser's console too.  
   </p>
   
-  <h6>variables of intereset</h6>
-  <div class='row span8'>
+  <h6>Variables of Intereset</h6>
+  <div class='row models-and-views'>
     <div class='span4'>
       <ul>
         <li>Model Class: <span class='m model-class'>Donut</span></li>
         <li>View Class:  <span class='m view-class'>DonutView</span></li>
-        <li>Instance of Model:  <span class=''>bostonCream</span></li>
-        <li>Instance of View:  bcDonutView</li>
-        <li>Page Element Being Rendered To:  $('#app')</li>
+        <li>Instance of Model:  <span class='m model-instantiation'>bostonCream</span></li>
+        <li>Instance of View:  <span class='m view-instantiation'>bcDonutView</span></li>
+        <li>Page Element Being Rendered To:  <span class='m attach-to-element'>$('#app')</span></li>
       </ul>
     </div>
-    <div class='span4'>
+    
+    <div class='span6'>
+    	<div id='source-view'>
+    	</div>
 
       <div id="box" class="box" data-trigger="model-class">
-	      <script>
+      	<script>
 	      	<%= render "js/model_view/_01_create_model_class.js" %>
-
-	      	<%= render "js/model_view/_02_create_view_class.js" %>
-
-	      	<%= render "js/model_view/_03_instantiate_model.js" %>
-
-	      	<%= render "js/model_view/_04_instantiate_view.js" %>
-
-	      	<%= render "js/model_view/_05_render_model_on_page_load.js" %>
-
-	      </script>
+      	</script>
       </div>
+
+      <div id="box" class="box" data-trigger="view-class">
+      	<script>
+      		<%= render "js/model_view/_02_create_view_class.js" %>
+    		</script>
+      </div>
+
+      <div id="box" class="box" data-trigger="model-instantiation">
+      	<script>
+      		<%= render "js/model_view/_03_instantiate_model.js" %>
+    		</script>
+      </div>
+
+      <div id="box" class="box" data-trigger="view-instantiation">
+      	<script>
+      		<%= render "js/model_view/_04_instantiate_view.js" %>
+    		</script>
+      </div>
+
+      <div id="box" class="box" data-trigger="attach-to-element">
+      	<script>
+      		<%= render "js/model_view/_05_render_model_on_page_load.js" %>
+    		</script>
+      </div>
+
 
     </div>
   </div>
 
 
-  <div class="row span8">
+  <div class="row">
   	<div class="well">
   		<p>Right below this line is where the #app element is!  It's being written to by backbone!</p>
   		<p>To prove to yourself that you're learning, change the name of the donut, and re-render it to the page</p>
@@ -46,3 +68,8 @@
     <br><br><br><br>
   </div>
 </div>
+
+
+<script>
+  Document.write('h');
+</script>

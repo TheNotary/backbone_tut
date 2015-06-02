@@ -15,7 +15,13 @@ module BackboneTut::Controllers
       render 'index.html'
     end
   end
-  
+
+  class ModelView < R '/js/model_view/all.js'
+    def get 
+      @headers['Content-Type'] = 'text/plain'
+      render '/js/model_view/all.js', :layout => false
+    end
+  end
 end
 
 module BackboneTut::Views
