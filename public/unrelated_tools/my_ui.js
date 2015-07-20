@@ -6,20 +6,22 @@ var MyUI = function(){
 // These functions are how we can switch what content is displayed based 
 // on which tab is activated by the user
 var TabSwitcher = function(){
+  // call this on an elements onclick event and pass in the
+  // element to have it's contents shown
   this.displayNotes = function(e) {
-    this.hideAllNotes();
+    hideAllNotes();
     var notes = e.getAttribute("data-name");
     $('div.'+notes).first().removeClass('hide');
-    this.changeActivenessTo(notes);
+    changeActivenessTo(notes);
   };
-  this.hideAllNotes = function() {
+  var hideAllNotes = function() {
     $('.notes').addClass('hide');
   };
-  this.removeActiveness = function() {
+  var removeActiveness = function() {
     $(".nav li").removeClass('active');
   };
-  this.changeActivenessTo = function(targ) {
-    this.removeActiveness();
+  var changeActivenessTo = function(targ) {
+    removeActiveness();
     $("li."+targ).addClass("active");
   };
 };
@@ -59,7 +61,10 @@ window.myUI = new MyUI();
 
 $().ready(function() {
   myUI.SourceCodePresenter.linkHoverActionToPresentationOfSourceCode('.box', '.source-view');
+  initEventHandlers();
 });
 
 
-
+function initEventHandlers(){
+  $(".display-tab a").on("click",function(e){ myUI.TabSwitcher.displayNotes(this); });
+}
