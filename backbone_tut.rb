@@ -25,7 +25,7 @@ module BackboneTut::Controllers
 
   class Donuts < R '/donuts'
     def get
-      render 'donuts.json', :layout => false
+      render 'donuts.json', :layout => false, :content_type => "application/json"
     end
   end
 

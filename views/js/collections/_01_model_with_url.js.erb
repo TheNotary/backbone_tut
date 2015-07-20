@@ -4,7 +4,7 @@
 /* Model Definition with URL pointed at API */
 
 // We extend the Backbone.Model prototype to build our own
-var Donut = Backbone.Model.extend({
+var DonutWithURL = Backbone.Model.extend({
  
   // We can pass it default values.
   defaults : {
@@ -24,11 +24,23 @@ var Donut = Backbone.Model.extend({
 
 
 
+/* Collection Class */
+
+
+var Donuts = Backbone.Collection.extend({
+  model: DonutWithURL,
+  url: '/donuts'
+});
+
+var donuts = new Donuts();
+
 
 
 
 
 /* Collection View Class */
+
+
 
 var DonutCollectionView = Backbone.View.extend({
   initialize : function() {
@@ -59,10 +71,16 @@ var DonutCollectionView = Backbone.View.extend({
 
 
 
+
 /* Collection Instantiation */
 
 
-
+var donutCollectionView = new DonutCollectionView({
+  collection : donuts,
+  el : $('ul.donuts')[0]
+});
+ 
+//donutCollectionView.render();
 
 
 
