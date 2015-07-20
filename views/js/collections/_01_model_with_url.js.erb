@@ -11,15 +11,15 @@ var DonutWithURL = Backbone.Model.extend({
     name : null,
     sparkles : false,
     cream_filled : false
-  },
+  } //,
  
   // it's just a flat html
-  url : function() {
+  //url : function() {
     // Important! It's got to know where to send its REST calls.
     // In this case, if it has an id, it needs to POST to and GET from '/donuts' 
     // and when it does have an id, it needs to PUT (back) to '/donuts/:id'
-    return this.id ? '/donuts/' + this.id : '/donuts';
-  }
+  //  return this.id ? '/donuts/' + this.id : '/donuts';
+  //}
 });
 
 
@@ -28,12 +28,13 @@ var DonutWithURL = Backbone.Model.extend({
 
 
 var Donuts = Backbone.Collection.extend({
-  model: DonutWithURL,
+  model: Donut,
   url: '/donuts'
 });
 
 var donuts = new Donuts();
 
+donuts.fetch();
 
 
 
@@ -77,7 +78,8 @@ var DonutCollectionView = Backbone.View.extend({
 
 var donutCollectionView = new DonutCollectionView({
   collection : donuts,
-  el : $('ul.donuts')[0]
+  //el : $('ul.donuts')[0]
+  el : $('#app')[0]
 });
  
 //donutCollectionView.render();
