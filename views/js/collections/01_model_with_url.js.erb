@@ -1,7 +1,30 @@
-
-
-
 /*   BEGIN COLLECTIONS SECTION    */
+
+
+/* Model Definition with URL pointed at API */
+
+// We extend the Backbone.Model prototype to build our own
+var Donut = Backbone.Model.extend({
+ 
+  // We can pass it default values.
+  defaults : {
+    name : null,
+    sparkles : false,
+    cream_filled : false
+  },
+ 
+  // it's just a flat html
+  url : function() {
+    // Important! It's got to know where to send its REST calls.
+    // In this case, if it has an id, it needs to POST to and GET from '/donuts' 
+    // and when it does have an id, it needs to PUT (back) to '/donuts/:id'
+    return this.id ? '/donuts/' + this.id : '/donuts';
+  }
+});
+
+
+
+
 
 
 
@@ -37,17 +60,6 @@ var DonutCollectionView = Backbone.View.extend({
 
 
 /* Collection Instantiation */
-
-
-
-
-
-
-
-
-
-
-
 
 
 

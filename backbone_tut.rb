@@ -22,6 +22,13 @@ module BackboneTut::Controllers
       render '/js/model_view/all.js', :layout => false
     end
   end
+
+  class Donuts < R '/donuts'
+    def get
+      render 'donuts.json', :layout => false
+    end
+  end
+
 end
 
 module BackboneTut::Views
