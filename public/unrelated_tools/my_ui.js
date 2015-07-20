@@ -1,6 +1,5 @@
 var MyUI = function(){
   
-
   this.displayNotes = function(e) {
     this.hideAllNotes();
     var notes = e.getAttribute("data-name");
@@ -17,15 +16,9 @@ var MyUI = function(){
     this.removeActiveness();
     $("li."+targ).addClass("active");
   };
-  
-}
-
-window.MyUI = MyUI;
-
-MyUI.prototype.SourceCodePresenter = {
   // Pass in the selector of the content you'd like presented somewhere
   // and the selector for the html element you'd like updated with content
-  linkHoverActionToPresentationOfSourceCode: function(contentSelector, renderPaneSelector) {
+  this.linkHoverActionToPresentationOfSourceCode = function(contentSelector, renderPaneSelector) {
     // get all boxes which have text content to show/ hide
     $(contentSelector).each(function(k,v){
       // Set the selected .box to an info modal
@@ -44,9 +37,17 @@ MyUI.prototype.SourceCodePresenter = {
       });
       
     });
-  };
 
+  };
+  
 };
+
+window.MyUI = new MyUI();
+
+//MyUI.prototype.SourceCodePresenter = {
+  
+
+//};
 
 
 
