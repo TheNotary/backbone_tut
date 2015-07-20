@@ -34,7 +34,7 @@ var Donuts = Backbone.Collection.extend({
 
 var donuts = new Donuts();
 
-donuts.fetch();
+
 
 
 
@@ -42,27 +42,28 @@ donuts.fetch();
 /* Collection View Class */
 
 
-
 var DonutCollectionView = Backbone.View.extend({
   initialize : function() {
     var that = this;
     this._donutViews = [];
- 
+
     this.collection.each(function(donut) {
       that._donutViews.push(new UpdatingDonutView({
         model : donut,
         tagName : 'li'
       }));
     });
+
   },
  
   render : function() {
     var that = this;
     // Clear out this element.
     $(this.el).empty();
- 
+    
     // Render each sub-view and append it to the parent view's element.
     _(this._donutViews).each(function(dv) {
+      // alert("It can't get to render function because donutViews is empty...");
       $(that.el).append(dv.render().el);
     });
   }
@@ -70,19 +71,28 @@ var DonutCollectionView = Backbone.View.extend({
 
 
 
+donuts.fetch({
+  success: function(){
+    window.donutCollectionView = instantiateDonutCollectionView();
+    donutCollectionView.render();
+  }
+});
 
 
 
 /* Collection Instantiation */
 
+// happens on success of fetching donuts from rails end point
+function instantiateDonutCollectionView(){
+  var donutCollectionView = new DonutCollectionView({
+    collection : donuts,
+    el : $('ul.donuts')[0]
+    //el : $('#app')[0]
+  });
+  return donutCollectionView;
+}
 
-var donutCollectionView = new DonutCollectionView({
-  collection : donuts,
-  //el : $('ul.donuts')[0]
-  el : $('#app')[0]
-});
- 
-//donutCollectionView.render();
+
 
 
 
