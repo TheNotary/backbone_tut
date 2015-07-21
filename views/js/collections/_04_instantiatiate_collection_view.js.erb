@@ -8,7 +8,7 @@ donuts.fetch({
     window.donutCollectionView = 
                           instantiateDonutCollectionView();
     donutCollectionView.render();
-    $('#app-c').append(donutCollectionView.el);
+    $('#app-c').html(donutCollectionView.el);
   }
 });
 
@@ -16,9 +16,7 @@ donuts.fetch({
 // happens on success of fetching donuts from rails end point
 function instantiateDonutCollectionView(){
   var donutCollectionView = new DonutCollectionView({
-    collection : donuts,
-    el : $('ul.donuts')[0]
-    //el : $('#app')[0]
+    collection : donuts
   });
   return donutCollectionView;
 }
