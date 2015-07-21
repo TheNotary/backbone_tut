@@ -46,26 +46,14 @@ var DonutCollectionView = Backbone.View.extend({
   initialize : function() {
     var that = this;
     this._donutViews = [];
-
-    this.collection.each(function(donut) {
-      that._donutViews.push(new UpdatingDonutView({
-        model : donut,
-        tagName : 'li'
-      }));
-    });
-
   },
  
   render : function() {
-    var that = this;
-    // Clear out this element.
-    $(this.el).empty();
-    
-    // Render each sub-view and append it to the parent view's element.
-    _(this._donutViews).each(function(dv) {
-      // alert("It can't get to render function because donutViews is empty...");
-      $(that.el).append(dv.render().el);
-    });
+    this.collection.forEach(this.addOne, this);
+  },
+  addOne: function(donutToAdd) {
+    var donutView = new DonutView({model: donutToAdd});
+    this.$el.append(donutView.render().el);
   }
 });
 
@@ -75,6 +63,7 @@ donuts.fetch({
   success: function(){
     window.donutCollectionView = instantiateDonutCollectionView();
     donutCollectionView.render();
+    $('#app-c').append(donutCollectionView.el);
   }
 });
 
