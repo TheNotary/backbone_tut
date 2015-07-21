@@ -15,9 +15,11 @@ var DonutWithURL = Backbone.Model.extend({
  
   // it's just a flat html
   url : function() {
-    // Important?? It's got to know where to send its REST calls.
-    // In this case, if it has an id, it needs to POST to and GET from '/donuts' 
-    // and when it does have an id, it needs to PUT (back) to '/donuts/:id'
+    // Important?? It's got to know where to send its 
+    // REST calls.  In this case, if it has an id, it 
+    // needs to POST to and GET from '/donuts' and 
+    // when it does have an id, it needs to PUT (back) 
+    // to '/donuts/:id'
     return this.id ? '/donuts/' + this.id : '/donuts';
   }
 });
