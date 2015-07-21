@@ -1,0 +1,22 @@
+/* Collection Instantiation */
+
+// We need to make sure our donuts collection is populated before we render...
+
+donuts.fetch({
+  success: function(){
+    window.donutCollectionView = instantiateDonutCollectionView();
+    donutCollectionView.render();
+    $('#app-c').append(donutCollectionView.el);
+  }
+});
+
+
+// happens on success of fetching donuts from rails end point
+function instantiateDonutCollectionView(){
+  var donutCollectionView = new DonutCollectionView({
+    collection : donuts,
+    el : $('ul.donuts')[0]
+    //el : $('#app')[0]
+  });
+  return donutCollectionView;
+}

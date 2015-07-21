@@ -7,10 +7,10 @@
   <div class='row models-and-views'>
     <div class='span4'>
       <ul>
-        <li>Model Class:  <span class='m model-class-url'>DonutWithURL</span></li>
-        <li>Collection Class:  <span class='m model-class-url'>Donuts</span></li>
-        <li>View Class for Collection:  <span class='m model-class-url'>DonutCollectionView</span></li>
-        <li>View Instantiation:  <span class='m model-class-url'>donutCollectionView</span></li>
+        <li>Model Class:  <span class='m model-class-url'>Donut</span></li>
+        <li>Collection Class:  <span class='m collection-class'>Donuts</span></li>
+        <li>View Class for Collection:  <span class='m collection-view-class'>DonutCollectionView</span></li>
+        <li>View Instantiation:  <span class='m instantiate-collection'>donutCollectionView</span></li>
         <li>Page Element Being Rendered To:  <span class='m attach-to-element'>$('#app')</span></li>
       </ul>
     </div>
@@ -25,11 +25,26 @@
         </script>
       </div>
 
-      <div id="box" class="box" data-trigger="model-class-url">
+      <div id="box" class="box" data-trigger="collection-class">
         <script>
-          <%= render "js/collections/_01_model_with_url.js" %>
+          <%= render "js/collections/_02_define_and_instantiate_collection.js" %>
         </script>
       </div>
+
+      <div id="box" class="box" data-trigger="collection-view-class">
+        <script>
+          <%= render "js/collections/_03_define_collection_view.js" %>
+        </script>
+      </div>
+
+      <div id="box" class="box" data-trigger="instantiate-collection">
+        <script>
+          <%= render "js/collections/_04_instantiatiate_collection_view.js" %>
+        </script>
+      </div>
+
+
+
     </div>
 
   </div>

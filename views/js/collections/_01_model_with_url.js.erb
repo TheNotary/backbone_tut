@@ -11,75 +11,27 @@ var DonutWithURL = Backbone.Model.extend({
     name : null,
     sparkles : false,
     cream_filled : false
-  } //,
+  },
  
   // it's just a flat html
-  //url : function() {
-    // Important! It's got to know where to send its REST calls.
+  url : function() {
+    // Important?? It's got to know where to send its REST calls.
     // In this case, if it has an id, it needs to POST to and GET from '/donuts' 
     // and when it does have an id, it needs to PUT (back) to '/donuts/:id'
-  //  return this.id ? '/donuts/' + this.id : '/donuts';
-  //}
-});
-
-
-
-/* Collection Class */
-
-
-var Donuts = Backbone.Collection.extend({
-  model: Donut,
-  url: '/donuts'
-});
-
-var donuts = new Donuts();
-
-
-
-
-
-
-/* Collection View Class */
-
-
-var DonutCollectionView = Backbone.View.extend({
-  initialize : function() {
-    var that = this;
-    this._donutViews = [];
-  },
- 
-  render : function() {
-    this.collection.forEach(this.addOne, this);
-  },
-  addOne: function(donutToAdd) {
-    var donutView = new DonutView({model: donutToAdd});
-    this.$el.append(donutView.render().el);
+    return this.id ? '/donuts/' + this.id : '/donuts';
   }
 });
 
 
 
-donuts.fetch({
-  success: function(){
-    window.donutCollectionView = instantiateDonutCollectionView();
-    donutCollectionView.render();
-    $('#app-c').append(donutCollectionView.el);
-  }
-});
 
 
 
-/* Collection Instantiation */
 
-// happens on success of fetching donuts from rails end point
-function instantiateDonutCollectionView(){
-  var donutCollectionView = new DonutCollectionView({
-    collection : donuts,
-    el : $('ul.donuts')[0]
-    //el : $('#app')[0]
-  });
-  return donutCollectionView;
-}
+
+
+
+
 
 
 

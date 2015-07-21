@@ -1,0 +1,18 @@
+/* Collection View Class */
+
+
+var DonutCollectionView = Backbone.View.extend({
+  initialize : function() {
+    var that = this;
+    this._donutViews = [];
+  },
+ 
+  render : function() {
+    this.collection.forEach(this.addOne, this);
+  },
+  addOne: function(donutToAdd) {
+    var donutView = new DonutView({model: donutToAdd});
+    this.$el.append(donutView.render().el);
+  }
+});
+

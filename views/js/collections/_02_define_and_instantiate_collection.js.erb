@@ -1,0 +1,10 @@
+/* Collection Class */
+
+
+var Donuts = Backbone.Collection.extend({
+  model: DonutWithURL,
+  url: '/donuts'
+});
+
+var donuts = new Donuts();
+
