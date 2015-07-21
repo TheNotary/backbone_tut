@@ -1,5 +1,7 @@
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active dependencies display-tab">
+  <li role="presentation" class="active display-tab events">
+    <a href="javascript:void(0);" data-name="about">About</a></li>
+  <li role="presentation" class="dependencies display-tab">
     <a href="javascript:void(0)" data-name="dependencies">Dependencies</a></li>
   <li role="presentation" class="order-of-operations display-tab">
     <a href="javascript:void(0);" data-name="order-of-operations">Order of Operations</a></li>
@@ -7,12 +9,12 @@
     <a href="javascript:void(0);" data-name="my-code-js-output">backbone output (models & views)</a></li>
   <li role="presentation" class="my-code-js-output-collections display-tab">
     <a href="javascript:void(0);" data-name="my-code-js-output-collections">collections backbone output (collections)</a></li>
-  <li role="presentation" class="display-tab events">
-    <a href="javascript:void(0);" data-name="events">Events</a></li>
+  
 </ul>
 
+<%= render "tab_display/_about.html" %>
 <%= render "tab_display/_dependencies.html" %>
 <%= render "tab_display/_order_of_operations.html" %>
 <%= render "tab_display/_models_and_views.html" %>
 <%= render "tab_display/_collections.html" %>
-<%= render "tab_display/_events.html" %>
+
