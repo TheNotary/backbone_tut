@@ -1,0 +1,33 @@
+<div class="notes events hide">
+  <div class="row">
+    <h4>Donut Collection:</h4>
+    <div class="donuts">
+      
+      <div class="donut well span2">
+        <div class="name">Glazed Donut</div>
+        <div class="info">
+          <div>Position: (<span class="x">1</span>, <span class="y">2</span>)</div>
+          <div>Owner: <span class="owner">Gregg</span></div>
+          <div class="nibbles-left"><span class="n-nibbles">6</span> nibble(s) left</div>
+
+        </div>
+
+        <button onclick="alert('not implemented');">Nibble</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <h4>Donut Board</h4>
+    <div class="board">
+      <% 10.times do |x| %>
+        <% 10.times do |y| %>
+          <div id="r<%=x%>c<%=y%>" class="donut-unit"> x </div> 
+        <% end %>
+        <div class="clear"></div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -68,3 +68,7 @@ $().ready(function() {
 function initEventHandlers(){
   $(".display-tab a").on("click",function(e){ myUI.TabSwitcher.displayNotes(this); });
 }
+
+
+
+

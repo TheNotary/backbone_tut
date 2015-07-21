@@ -25,3 +25,36 @@ li a:focus {
 em{
   font-weight:bold;
 }
+
+.donut .info {
+  padding-left:20px;
+}
+
+
+.board {
+  background-color:#ddd;
+}
+
+.board div{
+  background-color:#ddd;
+  width: 20px;
+  height: 20px;
+  text-align:center;
+  border:solid;
+  border-color: #ccc;
+  float:left;
+}
+
+
+.board div.donut-unit{
+  background-color:#09d;
+}
+
+div.clear{
+  clear:both;
+  height:0;
+  width: 0;
+  border:none;
+}
+
+

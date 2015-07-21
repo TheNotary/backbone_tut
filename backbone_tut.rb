@@ -11,7 +11,6 @@ module BackboneTut::Controllers
   class Index < R '/'
     def get 
       @t = Time.now
-      #render :index 
       render 'index.html'
     end
   end
@@ -23,9 +22,17 @@ module BackboneTut::Controllers
     end
   end
 
+  class BoardJs < R '/js/board/board.js'
+    def get
+      @headers['Content-Type'] = 'text/plain'
+      render '/js/board/board.js', :layout => false
+    end
+  end
+
   class Donuts < R '/donuts'
     def get
-      render 'donuts.json', :layout => false, :content_type => "application/json"
+      @headers['Content-Type'] = "application/json"
+      render 'donuts.json', :layout => false
     end
   end
 

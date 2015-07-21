@@ -1,0 +1,45 @@
+// This board will accept units
+window.Board = function(){
+  this.units = [];
+  //this.el = $();
+
+  this.addUnit = function(unit){
+    this.units.push(unit);
+  };
+
+  this.remUnit = function(name){
+    var newArray = [];
+    this.units.forEach(function(unit){
+      if (unit.name == name)
+        return;
+      newArray.push(unit);
+    });
+
+    this.units = newArray;
+  }
+
+  this.render = function(){
+    // clear board cells
+    $('.board div').html("");
+    $('.board div').removeClass('donut-unit');
+
+    this.units.forEach(function(unit){
+      var selector = "r" + unit.x + "c" + unit.y;
+      //$(selector).
+    });
+  };
+}
+
+
+window.Unit = function(name, x, y){
+  this.x = x;
+  this.y = y;
+  this.name = name;
+}
+
+
+window.board = new Board();
+
+board.addUnit(new Unit("cinnimon", 1, 2));
+
+
