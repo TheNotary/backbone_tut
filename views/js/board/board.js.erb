@@ -1,16 +1,15 @@
 // This board will accept units
 window.Board = function(){
   this.units = [];
-  //this.el = $();
 
   this.addUnit = function(unit){
     this.units.push(unit);
   };
 
-  this.remUnit = function(name){
+  this.remUnit = function(symbol){
     var newArray = [];
     this.units.forEach(function(unit){
-      if (unit.name == name)
+      if (unit.symbol == symbol)
         return;
       newArray.push(unit);
     });
@@ -19,27 +18,33 @@ window.Board = function(){
   }
 
   this.render = function(){
-    // clear board cells
-    $('.board div').html("");
-    $('.board div').removeClass('donut-unit');
+    clearBoard();
 
     this.units.forEach(function(unit){
-      var selector = "r" + unit.x + "c" + unit.y;
-      //$(selector).
+      var selector = "#r" + (unit.x) + "c" + (unit.y);
+      $(selector).html(unit.symbol);
+      $(selector).addClass('donut-unit');
     });
+  };
+
+  var clearBoard = function(){
+    $('.board div').html("");
+    $('.board div').removeClass('donut-unit');
   };
 }
 
 
-window.Unit = function(name, x, y){
+window.Unit = function(symbol, x, y){
   this.x = x;
   this.y = y;
-  this.name = name;
+  this.symbol = symbol;
 }
 
 
 window.board = new Board();
 
-board.addUnit(new Unit("cinnimon", 1, 2));
+board.addUnit(new Unit("g", 1, 1));
 
-
+$().ready(function() {
+  board.render();
+});

@@ -37,11 +37,11 @@ em{
 
 .board div{
   background-color:#ddd;
+  border-color: #cecece;
   width: 20px;
   height: 20px;
   text-align:center;
-  border:solid;
-  border-color: #ccc;
+  border-style:solid;
   float:left;
 }
 
