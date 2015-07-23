@@ -1,0 +1,22 @@
+
+* 0.0.x *
+
+  - Introducing collections, specifically, views where there is a shared view space for many models...
+    - I need to think how this is done...
+      - I have one collection with many items...
+        - The render action must be over-ridden on the view to 'adjust' the models on the shared board, 
+          and also render to elements on the traditional collection section in html
+
+
+  - Add keyboard inputs to move a "pacman" around the board and take nibbles!
+
+
+
+* 0.0.1 *
+
+  - Introducing versioning
+  - Using models and views individually complete
+
+
+
+
