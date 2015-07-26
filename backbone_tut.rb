@@ -22,10 +22,17 @@ module BackboneTut::Controllers
     end
   end
 
-  class BoardJs < R '/js/board/board.js'
+  class BoardJs < R '/js/events/board.js'
     def get
       @headers['Content-Type'] = 'text/plain'
-      render '/js/board/board.js', :layout => false
+      render '/js/events/board.js', :layout => false
+    end
+  end
+
+  class EventJs < R '/js/events/all.js'
+    def get
+      @headers['Content-Type'] = 'text/plain'
+      render '/js/events/all.js', :layout => false
     end
   end
 
@@ -33,6 +40,14 @@ module BackboneTut::Controllers
     def get
       @headers['Content-Type'] = "application/json"
       render 'donuts.json', :layout => false
+    end
+  end
+
+
+  class DonutMonsters < R '/donut_monsters'
+    def get
+      @headers['Content-Type'] = "application/json"
+      render 'donut_monsters.json', :layout => false
     end
   end
 
