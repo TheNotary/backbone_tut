@@ -22,6 +22,13 @@ module BackboneTut::Controllers
     end
   end
 
+  class CollectionsJs < R '/js/collections/all.js'
+    def get 
+      @headers['Content-Type'] = 'text/plain'
+      render '/js/collections/all.js', :layout => false
+    end
+  end
+
   class BoardJs < R '/js/events/board.js'
     def get
       @headers['Content-Type'] = 'text/plain'

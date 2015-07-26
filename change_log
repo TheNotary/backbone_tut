@@ -1,6 +1,10 @@
 
 * 0.0.x *
 
+  - Add keyboard inputs to move a "pacman" around the board and take nibbles!
+
+In Progress:
+
   - Introducing collections, specifically, views where there is a shared view space for many models...
     - I need to think how this is done...
       - I have one collection with many items...
@@ -8,7 +12,8 @@
           and also render to elements on the traditional collection section in html
 
 
-  - Add keyboard inputs to move a "pacman" around the board and take nibbles!
+
+Finished: 
 
   - Add collections/all.js.erb for 
 

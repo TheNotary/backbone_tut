@@ -1,18 +1,30 @@
 /* Collection View Class */
 
-
 var DonutCollectionView = Backbone.View.extend({
   initialize : function() {
-    var that = this;
-    this._donutViews = [];
+    this.collectionElements = [];
   },
  
   render : function() {
+    // clear out collectionElements
+    this.$el.html("");
+    this.collectionElements = [];
+    
     this.collection.forEach(this.addOne, this);
+
+    this.putChildElementsOntoCollectionElement();
   },
   addOne: function(donutToAdd) {
     var donutView = new DonutView({model: donutToAdd});
-    this.$el.append(donutView.render().el);
+    this.collectionElements.push(donutView.render().el);
+  },
+  putChildElementsOntoCollectionElement: function(){
+    _donutCollectionView = this;
+    
+
+    this.collectionElements.forEach(function(elem){
+      _donutCollectionView.$el.append(elem);
+    });
   }
 });
 

@@ -1,0 +1,40 @@
+/*   BEGIN COLLECTIONS SECTION    */
+
+
+/* Model Definition with URL pointed at API */
+
+// We extend the Backbone.Model prototype to build our own
+var DonutWithURL = Backbone.Model.extend({
+ 
+  // We can pass it default values.
+  defaults : {
+    name : null,
+    sparkles : false,
+    cream_filled : false
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* View Definition */
+/* same as view from the model and view page... overwrites so don't make changes here... */
+
+var DonutView = Backbone.View.extend({
+  tagName : "div",
+  className : "donut",
+ 
+  render : function() {
+    this.el.innerHTML = this.model.get('name');
+    return this;
+  }
+});

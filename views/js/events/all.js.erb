@@ -1,3 +1,5 @@
+/* Donut Monster Model */
+
 var DonutMonster = Backbone.Model.extend({
 
   defaults : {
@@ -7,19 +9,12 @@ var DonutMonster = Backbone.Model.extend({
     y : false,
     current_nibbles : 6,
     max_nibbles : 6
-  },
-
-  // it's just a flat html
-  url : function() {
-    // Important?? It's got to know where to send its 
-    // REST calls.  In this case, if it has an id, it 
-    // needs to POST to and GET from '/donuts' and 
-    // when it does have an id, it needs to PUT (back) 
-    // to '/donuts/:id'
-    return this.id ? '/donut_monsters/' + this.id : '/donut_monsters';
   }
+
 });
 
+
+/* Donut Monster Collection */
 
 var DonutMonsters = Backbone.Collection.extend({
   model: DonutMonster, 
@@ -27,3 +22,33 @@ var DonutMonsters = Backbone.Collection.extend({
 });
 
 var donutMonsters = new DonutMonsters();
+
+
+
+/* Donut Monster View */
+
+var DonutMonsterViewCollection = Backbon.View.extend({
+  render: function(){
+    this.collection.forEach();
+  }
+});
+
+
+
+
+donutMonsters.fetch({
+  success: function(){
+    
+    window.donutMonstersView = 
+      instantiateDonutMonstersView();
+
+    donutMonstersView.render();
+  }
+})
+
+
+
+function instantiateDonutMonstersView(){
+
+}
+
