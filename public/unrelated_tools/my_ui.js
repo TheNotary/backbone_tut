@@ -9,10 +9,14 @@ var TabSwitcher = function(){
   // call this on an elements onclick event and pass in the
   // element to have it's contents shown
   this.displayNotes = function(e) {
+    var targetNotes = e.getAttribute("data-name");
+    this.displayNotesByDataName(targetNotes);
+  };
+  // eg pass in 'events' to display that tab
+  this.displayNotesByDataName = function(dataName){
     hideAllNotes();
-    var notes = e.getAttribute("data-name");
-    $('div.'+notes).first().removeClass('hide');
-    changeActivenessTo(notes);
+    $('div.'+dataName).first().removeClass('hide');
+    changeActivenessTo(dataName);
   };
   var hideAllNotes = function() {
     $('.notes').addClass('hide');
@@ -62,6 +66,7 @@ window.myUI = new MyUI();
 $().ready(function() {
   myUI.SourceCodePresenter.linkHoverActionToPresentationOfSourceCode('.box', '.source-view');
   initEventHandlers();
+  myUI.TabSwitcher.displayNotesByDataName("events");
 });
 
 
