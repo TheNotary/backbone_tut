@@ -25,11 +25,30 @@ var donutMonsters = new DonutMonsters();
 
 
 
-/* Donut Monster View */
+/* Donut Monsters View */
 
-var DonutMonsterViewCollection = Backbon.View.extend({
-  render: function(){
-    this.collection.forEach();
+var DonutMonsterViewCollection = Backbone.View.extend({
+  initialize : function() {
+    this.collectionElements = [];
+  },
+  render : function() {
+    // clear out collectionElements
+    this.$el.html("");
+    this.collectionElements = [];
+    
+    this.collection.forEach(this.addOne, this);
+    this.putChildElementsOntoCollectionElement();
+  },
+  addOne: function(donutToAdd) {
+    var donutView = new DonutView({model: donutToAdd});
+    this.collectionElements.push(donutView.render().el);
+  },
+  putChildElementsOntoCollectionElement: function(){
+    _donutCollectionView = this;
+
+    this.collectionElements.forEach(function(elem){
+      _donutCollectionView.$el.append(elem);
+    });
   }
 });
 

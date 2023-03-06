@@ -4,14 +4,12 @@ var DonutCollectionView = Backbone.View.extend({
   initialize : function() {
     this.collectionElements = [];
   },
- 
   render : function() {
     // clear out collectionElements
     this.$el.html("");
     this.collectionElements = [];
     
     this.collection.forEach(this.addOne, this);
-
     this.putChildElementsOntoCollectionElement();
   },
   addOne: function(donutToAdd) {
@@ -20,11 +18,9 @@ var DonutCollectionView = Backbone.View.extend({
   },
   putChildElementsOntoCollectionElement: function(){
     _donutCollectionView = this;
-    
 
     this.collectionElements.forEach(function(elem){
       _donutCollectionView.$el.append(elem);
     });
   }
 });
-

@@ -3,6 +3,8 @@
 
   - Add keyboard inputs to move a "pacman" around the board and take nibbles!
 
+  - Add a model flow chart thing to see how you can get from a model to it's collection
+
 In Progress:
 
   - Introducing collections, specifically, views where there is a shared view space for many models...
@@ -12,6 +14,9 @@ In Progress:
           and also render to elements on the traditional collection section in html
 
 
+  - Need to customize the collection view for the events page...
+    - I need to be able to access the view for a specific model... so I can update and kill off individual models
+    - Maybe I should check through codeschool to see if there are events for model changes that the view should listen to?
 
 Finished: 
 

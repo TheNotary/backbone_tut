@@ -1,11 +1,11 @@
 /* Collection Instantiation */
 
-// We need to make sure our donuts collection is populated 
+// We need to make sure our donuts collection is populated
 // before we render...
 
 donuts.fetch({
   success: function(){
-    window.donutCollectionView = 
+    window.donutCollectionView =
                           instantiateDonutCollectionView();
     donutCollectionView.render();
     $('#app-c').html(donutCollectionView.el);
@@ -20,4 +20,3 @@ function instantiateDonutCollectionView(){
   });
   return donutCollectionView;
 }
-
